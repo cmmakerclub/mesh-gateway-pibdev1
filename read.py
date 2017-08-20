@@ -23,9 +23,13 @@ def on_publish(client, userdata, mid):
     print("published mid: "+str(mid))
     # print userdata
     pass
+def on_connect(client, userdata, flags, rc):
+    print("mqtt connected with result code "+str(rc))
+
 
 client = paho.Client()
 client.on_publish = on_publish
+client.on_connect = on_connect 
 client.connect(CONFIG['HOST'], CONFIG['PORT'])
 client.loop_start()
 
