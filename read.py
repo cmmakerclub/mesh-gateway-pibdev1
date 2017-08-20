@@ -26,10 +26,13 @@ def on_publish(client, userdata, mid):
 def on_connect(client, userdata, flags, rc):
     print("mqtt connected with result code "+str(rc))
 
+def on_disconnect(client, userdata, rc):
+    print("mqtt disconnected, result code "+str(rc))
 
 client = paho.Client()
 client.on_publish = on_publish
 client.on_connect = on_connect 
+client.on_disconnect = on_disconnect
 client.connect(CONFIG['HOST'], CONFIG['PORT'])
 client.loop_start()
 
