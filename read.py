@@ -54,6 +54,7 @@ try:
         parity=serial.PARITY_NONE,
         stopbits=serial.STOPBITS_ONE,
         bytesize=serial.EIGHTBITS)
+    print "serial port connected with baudrate = %d" %CONFIG['SERIAL_BAUD_RATE']
 except Exception, e:
     print str(e)
     exit()
