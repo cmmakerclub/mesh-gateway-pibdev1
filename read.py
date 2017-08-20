@@ -24,7 +24,9 @@ def on_publish(client, userdata, mid):
     # print userdata
     pass
 def on_connect(client, userdata, flags, rc):
-    print("mqtt connected with result code "+str(rc))
+    host = CONFIG['MQTT_HOST']
+    port = CONFIG['MQTT_PORT']
+    print("mqtt connected to %s:%d with result code = %s "%(host, port, str(rc)))
 
 def on_disconnect(client, userdata, rc):
     print("mqtt disconnected, result code "+str(rc))
