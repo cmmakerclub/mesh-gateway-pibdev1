@@ -85,7 +85,7 @@ while True:
         line = readline(ser)
         line_str = bytes(line)
         line_hex = str2hexstr(line_str)
-        print ">>> " + str2hexstr(line_str)
+        # print ">>> " + str2hexstr(line_str)
         print ">>> type = %d " %line[2]
         print ">>> len = %d " %line[3]
 
