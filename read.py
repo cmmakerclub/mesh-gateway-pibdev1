@@ -11,8 +11,8 @@ CONFIG = {
     'NAME': os.environ.get('MQTT_NAME', ''),
     'USER': os.environ.get('MQTT_USER', ''),
     'PASSWORD': os.environ.get('MQTT_PASSWORD', ''),
-    'HOST': os.environ.get('MQTT_HOST', 'beta.cmmc.io'),
-    'PORT': int(os.environ.get('MQTT_PORT', 51883)),
+    'MQTT_HOST': os.environ.get('MQTT_HOST', 'beta.cmmc.io'),
+    'MQTT_PORT': int(os.environ.get('MQTT_PORT', 51883)),
     'PUB_TOPIC': os.environ.get('MQTT_PUB_TOPIC', 'PROXY/MESH/1'),
     'SERIAL_PORT_PATTERN': os.environ.get('SERIAL_PORT_PATTERN', 'usbserial*'),
     'SERIAL_BAUD_RATE': int(os.environ.get('SERIAL_BAUD_RATE', 57600)),
@@ -35,7 +35,7 @@ client = paho.Client()
 client.on_publish = on_publish
 client.on_connect = on_connect 
 client.on_disconnect = on_disconnect
-client.connect(CONFIG['HOST'], CONFIG['PORT'])
+client.connect(CONFIG['MQTT_HOST'], CONFIG['MQTT_PORT'])
 client.loop_start()
 
 device = None
