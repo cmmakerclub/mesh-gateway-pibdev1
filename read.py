@@ -12,10 +12,10 @@ CONFIG = {
     'USER': os.environ.get('MQTT_USER', ''),
     'PASSWORD': os.environ.get('MQTT_PASSWORD', ''),
     'HOST': os.environ.get('MQTT_HOST', 'beta.cmmc.io'),
-    'PORT': os.environ.get('MQTT_PORT', 51883),
+    'PORT': int(os.environ.get('MQTT_PORT', 51883)),
     'PUB_TOPIC': os.environ.get('MQTT_PUB_TOPIC', 'PROXY/MESH/1'),
     'SERIAL_PORT_PATTERN': os.environ.get('SERIAL_PORT_PATTERN', 'usbserial*'),
-    'SERIAL_BAUD_RATE': os.environ.get('SERIAL_BAUD_RATE', 57600),
+    'SERIAL_BAUD_RATE': int(os.environ.get('SERIAL_BAUD_RATE', 57600)),
 }
 
 
